@@ -1,11 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.adeccoappglobal.inappreview" version="1.0.0"
+<plugin id="com.adeccoappglobal.inappreview" version="1.5.0"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    
     <name>InAppReview</name>
+    <description>Cordova InAppReview Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,in,app,review,inappreview</keywords>
+    <repo>https://github.com/adecco-app/inappreview</repo>
+    <issue>https://github.com/adecco-app/inappreview/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=9.0.0"/>
+        <engine name="cordova-android" version=">=9.0.0" />
+        <engine name="cordova-ios" version=">=6.0.0" />
+    </engines>
+    
     <js-module name="InAppReview" src="www/InAppReview.js">
         <clobbers target="cordova.plugins.InAppReview" />
     </js-module>
+    
+    <!-- ios -->
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="InAppReview">
@@ -15,6 +30,8 @@
         <source-file src="src/ios/InAppReview.m" />
         <framework src="StoreKit.framework" />
     </platform>
+    
+    <!-- android -->
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="InAppReview">
